@@ -1,7 +1,7 @@
 {
-  "name": "music-library-api-integration-tests",
+  "name": "Grapevine API",
   "version": "1.0.0",
-  "description": "Music Library API integration test suite",
+  "description": "API for Grapevine app",
   "private": true,
   "scripts": {
     "start": "nodemon -r dotenv/config index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/MCRcodes/kata-api"
+    "url": "https://github.com/jennyardrey/grapevine-api"
   },
   "keywords": [
     "express",
@@ -17,7 +17,7 @@
     "javascript",
     "server"
   ],
-  "author": "Manchester Codes",
+  "author": "Jenny Ardrey",
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^5.0.1",
