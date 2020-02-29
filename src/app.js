@@ -6,11 +6,11 @@ const app = express();
 app.use(express.json());
 
 app.post('/user', userControllers.create);
-app.post('/user/mood', moodControllers.postMood);
 app.get('/user', userControllers.list);
+app.post('/user/mood', moodControllers.postMood);
 app.post('/user/message', moodControllers.postMessage);
 app.get('/moods', moodControllers.getMoods);
-// app.get('/moods/:role', resultsControllers.getRoleMoods)
-// app.get('/messages/:userId', resultsControllers.userMessages)
+// app.get('/moods/:role', moodControllers.getRoleMoods);
+app.get('/moods/messages/', moodControllers.getMessages);
 
 module.exports = app;

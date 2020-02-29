@@ -44,3 +44,9 @@ exports.getMoods = (req, res) => {
     res.status(200).json(mood);
   });
 };
+
+exports.getMessages = (req, res) => {
+  Message.find({}, (err, message) => {
+    res.status(200).json(message);
+  });
+};
