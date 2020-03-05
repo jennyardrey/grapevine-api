@@ -15,5 +15,6 @@ app.post('/user/message', moodControllers.postMessage);
 app.get('/moods', moodControllers.getMoods);
 // app.get('/moods/:role', moodControllers.getRoleMoods);
 app.get('/moods/messages', moodControllers.getMessages);
+app.get('/user/login', userControllers.login);
 
 module.exports = app;
