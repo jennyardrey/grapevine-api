@@ -19,3 +19,13 @@ exports.list = (req, res) => {
     res.status(200).json(user);
   });
 };
+
+exports.login = (req, res) => {
+  User.findOne({ name: req.body.username }, (err, user) => {
+    if (!user) {
+      res.status(404).json('Please create a user');
+    } else {
+      res.status(200).json(user);
+    }
+  });
+};
