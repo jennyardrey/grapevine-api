@@ -1,5 +1,6 @@
 const Mood = require('../models/mood');
 const Message = require('../models/message');
+const User = require('../models/user');
 
 exports.postMood = (req, res) => {
   // console.log(req.body.name);
@@ -46,7 +47,33 @@ exports.getMoods = (req, res) => {
 };
 
 exports.getMessages = (req, res) => {
-  Message.find({}, (err, message) => {
-    res.status(200).json(message);
+  Message.find({}, (err, messages) => {
+    res.status(200).json(messages);
+  });
+};
+
+exports.getRoleMoods = (req, res) => {
+  Mood.find({ role: req.params.role }, (err, mood) => {
+    res.status(200).json(mood);
+  });
+};
+
+exports.moodDelete = (req, res) => {
+  Mood.findByIdAndDelete({ _id: req.params.moodId }, (err, data) => {
+    if (!data) {
+      res.status(404).json({ error: 'The mood could not be found.' });
+    } else {
+      res.status(204).json('Mood was deleted');
+    }
+  });
+};
+
+exports.messageDelete = (req, res) => {
+  Message.findByIdAndDelete({ _id: req.params.messageId }, (err, data) => {
+    if (!data) {
+      res.status(404).json({ error: 'The message could not be found.' });
+    } else {
+      res.status(204).json('Message was deleted');
+    }
   });
 };

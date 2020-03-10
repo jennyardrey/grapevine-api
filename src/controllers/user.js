@@ -29,3 +29,24 @@ exports.login = (req, res) => {
     }
   });
 };
+
+exports.searchUser = (req, res) => {
+  User.findOne({ name: req.params.name }, (err, user) => {
+    console.log(user);
+    if (!user) {
+      res.status(200).json('Please create a user');
+    } else {
+      res.status(200).json(user);
+    }
+  });
+};
+
+exports.userDelete = (req, res) => {
+  User.findByIdAndDelete({ _id: req.params.userId }, (err, data) => {
+    if (!data) {
+      res.status(404).json({ error: 'The user could not be found.' });
+    } else {
+      res.status(204).json('User was deleted');
+    }
+  });
+};
