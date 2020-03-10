@@ -27,17 +27,14 @@ exports.postMessage = (req, res) => {
     user: req.body.user,
     message: req.body.message,
   });
-  if (!msg.user) {
-    res.status(404).json({ error: 'Please log in to send a message' });
-  } else {
-    msg.save().then(savedMsg => {
-      Message.findOne({ _id: savedMsg })
-        .populate({ path: 'user' })
-        .exec((err, msgId) => {
-          res.status(201).json(msgId);
-        });
-    });
-  }
+
+  msg.save().then(savedMsg => {
+    Message.findOne({ _id: savedMsg })
+      .populate({ path: 'user' })
+      .exec((err, msgId) => {
+        res.status(201).json(msgId);
+      });
+  });
 };
 
 exports.getMoods = (req, res) => {
