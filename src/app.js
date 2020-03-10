@@ -14,7 +14,7 @@ app.post('/user/mood', moodControllers.postMood);
 app.post('/user/message', moodControllers.postMessage);
 app.get('/moods', moodControllers.getMoods);
 app.get('/moods/:role', moodControllers.getRoleMoods);
-app.get('/moods/messages', moodControllers.getMessages);
+app.get('/messages', moodControllers.getMessages);
 app.post('/user/login', userControllers.login);
 app.get('/user/:name', userControllers.searchUser);
 app.delete('/user/:userId', userControllers.userDelete);
