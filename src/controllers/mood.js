@@ -44,9 +44,11 @@ exports.getMoods = (req, res) => {
 };
 
 exports.getMessages = (req, res) => {
-  Message.find({}, (err, messages) => {
-    res.status(200).json(messages);
-  });
+  Message.find({})
+    .populate({ path: 'user' })
+    .exec((err, mood) => {
+      res.status(200).json(mood);
+    });
 };
 
 exports.getRoleMoods = (req, res) => {
