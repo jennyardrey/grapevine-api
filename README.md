@@ -1,29 +1,9 @@
-# Music API Test Suite
+# API for Grapevine Project
+Grapevine is an app to help employers communicate effectively with their employees.
 
-This repository contains the integration test suite for Music Library API challenge.
+This repository contains the API used to create users, save and display mood scores and send and display messages.
 
-### Install
-- Fork this repository
-- `git clone git@github.com:<your-github-username>/music-library-api.git`
-- `npm install`
+The API is deployed at https://boiling-meadow-46426.herokuapp.com/
 
-### Running the Tests
-This setup assumes that you are running `mongodb` on your local machine.
-
-Create a new file in the project root called `.env.test` and add your `DATABASE_CONN`. You can do this with a single command from within the project directory.
-
-```
-DATABASE_CONN=mongodb://localhost:27017/music-api-test >> .env.test
-```
-
-- `npm test` uses [Jest](https://jestjs.io/) and [Supertest](https://www.npmjs.com/package/supertest) to run e2e tests defined in `__tests__` directory
-
-### Running the API
-
-Create a new file in the project root called `.env` and add your `DATABASE_CONN`. You can do this with a single command from within the project directory.
-
-```
-DATABASE_CONN=mongodb://localhost:27017/music-api >> .env
-```
-
-You can then fire up the API with `npm start`.
+The corresponding app Grapevine was built by Jenny Ardrey and Gareth Beer and can be found here:
+https://grapevine.octavesapart.vercel.app/
